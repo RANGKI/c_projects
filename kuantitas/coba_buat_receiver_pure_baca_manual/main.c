@@ -20,8 +20,16 @@ int main(int argc, char **argv) {
     my_sock_addr.sin_addr = my_in_addr;
     int is_binding_success = bind(my_socket, (const struct sockaddr *)&my_sock_addr, sizeof(my_sock_addr));
     if (is_binding_success == 0) {
-        printf("Listening on port %u\n",ntohs(my_sock_addr.sin_port));
+        printf("Listening in 0.0.0.0 on port %u\n",ntohs(my_sock_addr.sin_port));
     }
+    /*
 
+    *Interacting with tcp socket
+    *Refrence: https://dn760101.eu.archive.org/0/items/upm-sup1-4.3bsd/Image091617220704.merged.pdf
+
+    */
+    while(1) {
+
+    }
     return 0;
 }
